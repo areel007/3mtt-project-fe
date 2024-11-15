@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary-color: rgba(38, 166, 91, 1);
+  --light-primary-color: rgba(38, 166, 91, 0.7);
+  --secondary-color: #ffc107;
+  --red: #f75a5b;
+  --orange: #f87329;
+  --light-grey: #f1f5f9;
+  --black: #21262e;
+
+  /* font size */
+  --desktop-font-size: 16px;
+  --mobile-font-size: 14px;
+
+  --gap: 1rem;
+
+  /* border */
+  --border-color: --var(--primary-color);
+
+  /* button */
+  --btn-bg-color: var(--primary-color);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  background-color: var(--btn-bg-color);
+  font-size: var(--mobile-font-size);
+  color: white;
+  padding: 10px 20px;
+  transition: all 0.1s ease-in-out;
+  border-radius: 20px;
+  border: none;
+  min-width: 120px;
+  box-shadow: rgba(155, 154, 154, 0.3) 2px 2px 3px;
+}
+
+button:hover {
+  /* background-color: var(--light-primary-color); */
+  box-shadow: rgba(155, 154, 154, 0.2) 1.95px 1.95px 2.6px;
+}
+
+input {
+  font-size: var(--mobile-font-size);
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+  padding-block: 20px;
+  box-shadow: rgba(205, 204, 204, 0.2) 1.95px 1.95px 2.6px;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__inner h1 {
+  color: var(--black);
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 600;
+}
+
+svg {
+  width: 18px;
+}
