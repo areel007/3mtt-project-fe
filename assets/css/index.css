@@ -5,7 +5,7 @@
   --light-primary-color: rgba(38, 166, 91, 0.7);
   --secondary-color: #ffc107;
   --red: #f75a5b;
-  --orange: #f87329;
+  --orange: #f68446;
   --light-grey: #f1f5f9;
   --black: #21262e;
 
@@ -36,7 +36,7 @@ body {
 
 .container {
   max-width: 1200px;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -61,21 +61,25 @@ button:hover {
 
 input {
   font-size: var(--mobile-font-size);
-  padding: 10px 20px;
-  border-radius: 20px;
+  background-color: transparent;
   border: none;
   border: none;
   outline: none;
   width: 100%;
 }
 
+a {
+  display: flex;
+  align-items: center;
+}
+
 header {
   position: sticky;
   top: 0;
-  background-color: white;
-  z-index: 10;
-  padding-block: 20px;
-  box-shadow: rgba(205, 204, 204, 0.2) 1.95px 1.95px 2.6px;
+  background-color: var(--light-grey);
+  z-index: 100;
+  padding-block: 25px;
+  box-shadow: rgba(223, 220, 220, 0.2) 1.95px 1.95px 2.6px;
 }
 
 .header__inner {
@@ -84,7 +88,17 @@ header {
   align-items: center;
 }
 
-.header__inner h1 {
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.logo img {
+  width: 30px;
+}
+
+.logo h1 {
   color: var(--black);
   font-size: 20px;
   line-height: 1;
@@ -92,5 +106,419 @@ header {
 }
 
 svg {
-  width: 18px;
+  height: 20px;
+  fill: rgba(95, 91, 91, 0.8);
+  cursor: pointer;
+  user-select: none;
+}
+
+svg:hover {
+  fill: var(--black);
+}
+
+.socials {
+  --gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.user {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  box-shadow: rgba(117, 116, 116, 0.2) 1.95px 1.95px 2.6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--black);
+  background-color: white;
+  user-select: none;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    gap: 10px;
+  }
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  svg {
+    height: 18px;
+  }
+
+  header {
+    padding-block: 15px;
+  }
+}
+
+.search-filter {
+  background-color: white;
+  padding-block: 10px;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.search-filter__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 250px;
+  box-shadow: rgba(223, 220, 220, 0.2) 1.95px 1.95px 2.6px;
+  padding: 7px 10px;
+  border: 1px solid var(--light-grey);
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .search {
+    flex: 1;
+  }
+}
+
+#search-icon {
+  fill: rgb(120, 116, 116);
+  width: 16px;
+}
+
+.filter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.filter svg {
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter__content {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  padding: 10px;
+  box-shadow: rgba(223, 220, 220, 0.2) 1.95px 1.95px 2.6px;
+  border: 1px solid var(--light-grey);
+  min-width: 200px;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background-color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .filter__content {
+    right: 0;
+    left: unset;
+    top: 220%;
+    min-width: unset;
+    width: auto;
+  }
+}
+
+.filter__content span {
+  color: rgb(120, 116, 116);
+  font-weight: 500;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.filter__content select {
+  padding: 7px 10px;
+  border: 1px solid var(--light-grey);
+  width: 100%;
+  outline: none;
+  display: flex;
+}
+
+.filter__content input[type="date"] {
+  padding: 7px 10px;
+  border: 1px solid var(--light-grey);
+  width: 100%;
+  outline: none;
+  display: flex;
+}
+
+/* tasks */
+.tasks {
+  padding-block: 20px;
+  position: relative;
+}
+
+.tasks__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.task__card {
+  padding: 10px;
+  border: 1px solid var(--light-grey);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: white;
+  box-shadow: rgba(223, 220, 220, 0.2) 1.95px 1.95px 2.6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.task__card:hover {
+  box-shadow: rgba(218, 216, 216, 0.3) 2px 2px 3px;
+}
+
+.task__card:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.high:after {
+  background-color: var(--red);
+}
+
+.medium:after {
+  background-color: var(--orange);
+}
+
+.low:after {
+  background-color: var(--primary-color);
+}
+
+.task__card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task__card__header h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black);
+  text-transform: capitalize;
+}
+
+.task__card__header span {
+  color: #383737;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.description {
+  color: rgb(79, 76, 76);
+  font-size: 12px;
+}
+
+.due__date {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f75a5b;
+}
+
+/* login */
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-block: 10%;
+}
+
+form {
+  width: 400px;
+  padding: 20px;
+  border: 1px solid var(--light-grey);
+  background-color: white;
+  box-shadow: rgba(223, 220, 220, 0.2) 1.95px 1.95px 2.6px;
+}
+
+.form__title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--light-primary-color);
+}
+
+form input {
+  padding: 15px;
+  border: 1px solid var(--light-grey);
+  width: 100%;
+  outline: none;
+}
+
+.form__input {
+  display: grid;
+  gap: 10px;
+  margin-block: 20px;
+}
+
+.submit__btn__login,
+.submit__btn__register {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: unset;
+  border-radius: unset;
+  cursor: pointer;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form__link {
+  font-size: 14px;
+  color: #3f3e3e;
+}
+
+.register__form {
+  display: none;
+}
+
+.error,
+.error-register {
+  font-size: 14px;
+  color: var(--red);
+}
+
+@media screen and (max-width: 768px) {
+  .login {
+    padding-block: 20%;
+  }
+
+  form {
+    width: 90%;
+  }
+}
+
+/* loader */
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  display: none;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #fff;
+  width: 3px;
+  height: 3px;
+  transform: translate(150%, 150%);
+  border-radius: 50%;
+}
+.loader::before {
+  left: auto;
+  top: auto;
+  right: 0;
+  bottom: 0;
+  transform: translate(-150%, -150%);
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* add task btn */
+.add__task {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  box-shadow: rgba(223, 220, 220, 0.4) 2px 2px 3px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 100px;
+  right: 100px;
+  z-index: 9;
+}
+
+.add__task:hover {
+  background-color: var(--light-primary-color);
+}
+
+form.task__form {
+  position: fixed;
+  right: 100px;
+  bottom: 150px;
+  display: none;
+  gap: 10px;
+  width: 400px;
+  padding: 20px;
+  border: 1px solid var(--light-grey);
+  background-color: white;
+  box-shadow: rgba(128, 126, 126, 0.3) 3px 3px 4px;
+}
+
+form.task__form select,
+form.task__form textarea {
+  font-size: var(--mobile-font-size);
+  background-color: transparent;
+  border: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 15px 10px;
+  border: 1px solid var(--light-grey);
+}
+
+textarea {
+  resize: none;
+}
+
+.task__form-title {
+  font-size: 14px;
+  color: #21262e;
+  font-weight: 500;
+}
+
+.task__error {
+  font-size: 12px;
+  color: var(--red);
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .add__task {
+    right: 15px;
+    bottom: 40px;
+  }
+  form.task__form {
+    width: 90%;
+    right: unset;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100px;
+  }
 }

@@ -12,28 +12,50 @@
     />
   </head>
   <body>
-    <main>
-      <header>
-        <div class="container header__inner">
-          <h1>Task Manager</h1>
-          <div class="socials">
-            <a href="" target="_blank">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                <path
-                  d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
-                />
-              </svg>
-            </a>
-          </div>
-          <!-- <div>
-            <div class="search">
-              <input type="text" placeholder="search task" />
-              <span class="material-symbols-outlined"> search </span>
-            </div>
-          </div> -->
+    <main class="login">
+      <form class="login__form">
+        <span class="form__title">Sign In</span>
+        <p class="error"></p>
+        <div class="form__input">
+          <input type="text" placeholder="Username" />
+          <input type="password" placeholder="Password" />
+          <button type="submit" class="submit__btn__login">
+            <span class="text">Sign In</span>
+            <span class="loader"></span>
+          </button>
         </div>
-      </header>
+        <span class="form__link"
+          >Don't have an account?
+          <span
+            class="register__link"
+            style="color: var(--primary-color); cursor: pointer"
+            >Sign Up</span
+          ></span
+        >
+      </form>
+
+      <form class="register__form">
+        <span class="form__title">Sign Up</span>
+        <p class="error-register"></p>
+        <div class="form__input">
+          <input type="text" placeholder="Username" />
+          <input type="password" placeholder="Password" />
+          <button type="submit" class="submit__btn__register">
+            <span class="text">Sign Up</span>
+            <span class="loader"></span>
+          </button>
+        </div>
+        <span class="form__link"
+          >Already have an account?
+          <span
+            class="login__link"
+            style="color: var(--primary-color); cursor: pointer"
+            >Sign In</span
+          ></span
+        >
+      </form>
     </main>
+
     <script src="./assets/js/app.js"></script>
   </body>
 </html>
