@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  const BASE_URI = "https://threemtt-task-management-system.onrender.com/api";
   // Login and Register forms toggle
   let step = 1;
   const loginForm = document.querySelector(".login__form");
@@ -65,7 +66,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
+      const response = await fetch(`${BASE_URI}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -131,7 +132,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/register", {
+      const response = await fetch(`${BASE_URI}/auth/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

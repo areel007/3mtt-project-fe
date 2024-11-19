@@ -89,6 +89,7 @@ header {
 }
 
 .logo {
+  --gap: 8px;
   display: flex;
   align-items: center;
   gap: var(--gap);
@@ -482,7 +483,9 @@ form.task__form {
 }
 
 form.task__form select,
-form.task__form textarea {
+form.task__form textarea,
+.edit__task__form select,
+.edit__task__form textarea {
   font-size: var(--mobile-font-size);
   background-color: transparent;
   border: none;
@@ -497,7 +500,8 @@ textarea {
   resize: none;
 }
 
-.task__form-title {
+.task__form-title,
+.edit__task__form span {
   font-size: 14px;
   color: #21262e;
   font-weight: 500;
@@ -514,11 +518,69 @@ textarea {
     right: 15px;
     bottom: 40px;
   }
-  form.task__form {
+  form.task__form,
+  form.edit__task__form {
     width: 90%;
     right: unset;
     left: 50%;
     transform: translateX(-50%);
     bottom: 100px;
+  }
+}
+
+/*  */
+.date-edit-delete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.date-edit-delete svg {
+  fill: transparent;
+  cursor: pointer;
+  color: #383737;
+}
+
+.svgs__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/*  */
+.edit__task__form {
+  position: fixed;
+  right: 100px;
+  bottom: 150px;
+  display: none;
+  gap: 10px;
+  width: 400px;
+  padding: 20px;
+  border: 1px solid var(--light-grey);
+  background-color: white;
+  box-shadow: rgba(128, 126, 126, 0.3) 3px 3px 4px;
+}
+
+.close__edit__form {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: var(--red);
+  cursor: pointer;
+}
+
+.no-tasks-message {
+  color: var(--red);
+}
+
+.logo__text {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .logo__text {
+    font-size: 16px;
   }
 }
